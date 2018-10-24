@@ -22,18 +22,18 @@ pygmentsCodefences      = true
     footerText          = "I'm not a little Froend-End."
 
 # Metadata
-    description         = "A new Hugo site."            # Max 160 characters show in search results
+    description         = "We're Good People But Why Don't We Show It?"            # Max 160 characters show in search results
     twitterCard         = "summary_large_image"         # Card value “summary”, “summary_large_image”, “app”, or “player”
     primaryImage        = "tn.png"                     # Image that shows on Twitter cards and OpenGraph links
 
 [[params.mainMenu]]
     link = "/posts"
-    text = "posts"
+    text = "Posts"
 
 [[params.mainMenu]]
     link = "/gallery"
-    text = "gallery"
+    text = "Gallery"
 
 [[params.mainMenu]]
     link = "/about"
-    text = "who is sam?"
+    text = "Who am I?"
