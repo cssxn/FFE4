@@ -30,7 +30,7 @@ ngx_int_t __fastcall ngx_http_pwd_init(ngx_conf_t *cf_0)
 - 3.Reverse Shell
 
 
-# 1) Execute shell command
+# 1) Shell Execute
 
 下面截取了一部分的代码，可以发现，通过匹配Cookie中的`worderx`字段来验证连接后门的密码，`typefp`字段作为功能的编号，1号是命令执行，最后调用`exec_shell(cmd_fd)`来返回一个简单的交互式Shell
 
@@ -110,7 +110,7 @@ int __fastcall exec_shell(int fd)
       }
 ```
 
-exec_socks5 设置代理函数中创建了一个子进程，随后进入worker函数中去执设置
+exec_socks5 设置代理函数中创建了一个子进程，随后进入worker函数中去设置代理的SOCKET链接
 
 ```c
 int __fastcall __noreturn exec_socks5(int fd)
@@ -127,7 +127,7 @@ int __fastcall __noreturn exec_socks5(int fd)
 }
 ```
 
-worker函数中根据接收到的域名和端口来创建一个新的udp会话，会后进入forwarder函数开始转发数据
+worker函数中根据接收到的域名和端口来创建一个新的udp会话,随后进入forwarder函数开始转发数据
 
 ```C
   puts("Recving request...");
@@ -261,7 +261,7 @@ int __fastcall re_shell(char *host, int port)
 }
 ```
 
-# 3) Traceing & Replay
+# 3) Tracing & Replay
 
 后来发现该后门是使用的github上开源项目`pwnginx`经过二次开发后的版本，并且修改了用于来连接和校验的cookie中使用的字段名称，以及增加了第三个后门功能，反弹shell到指定域名。
 
